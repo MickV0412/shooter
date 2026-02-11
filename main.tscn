@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cm621mb08nyu8"]
+
+[ext_resource type="Script" uid="uid://bgvb7j48b0vyw" path="res://scripts1/shooter_timer.gd" id="1_5vw27"]
+[ext_resource type="Texture2D" uid="uid://b2505e1b54m80" path="res://Schermafbeelding 2026-02-11 115040.png" id="1_kek77"]
+[ext_resource type="Script" uid="uid://bvuioum8744jb" path="res://scripts1/score_ui.gd" id="2_kek77"]
+[ext_resource type="Script" uid="uid://mllkpttih3lt" path="res://scripts1/shooter_countdown.gd" id="3_4c57u"]
+[ext_resource type="Texture2D" uid="uid://c4gi6qe4qaf4o" path="res://tekstbord.png" id="4_4c57u"]
+[ext_resource type="Script" uid="uid://fm5u758bs0mw" path="res://scripts1/player_name_label.gd" id="4_efxa6"]
+[ext_resource type="Script" uid="uid://8m2e43yr3bi8" path="res://scripts1/target_spawner.gd" id="5_dg77c"]
+[ext_resource type="PackedScene" uid="uid://c375jqdgj8yqy" path="res://alien_target.tscn" id="6_ycdy4"]
+[ext_resource type="Script" uid="uid://l0nk0yjnucg2" path="res://scripts1/shooter_game_manager.gd" id="7_w48qg"]
+[ext_resource type="Script" uid="uid://ca5vt1fddotew" path="res://scripts1/shooter_leaderboard.gd" id="8_vivmo"]
+
+[node name="Main" type="Node2D" unique_id=1402173915]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=701031886]
+position = Vector2(960, 539.5)
+scale = Vector2(1.995842, 1.5937961)
+texture = ExtResource("1_kek77")
+
+[node name="ScoreBackground" type="Sprite2D" parent="." unique_id=1209095708]
+position = Vector2(1017.6539, 27)
+scale = Vector2(0.2198545, 0.12313482)
+texture = ExtResource("4_4c57u")
+offset = Vector2(200, 60)
+
+[node name="Timer" type="Label" parent="." unique_id=711553526 groups=["timer"]]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_5vw27")
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="." unique_id=914000533 groups=["score"]]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_kek77")
+metadata/_edit_use_anchors_ = true
+
+[node name="CountdownLabel" type="Label" parent="." unique_id=521662977 groups=["countdown"]]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("3_4c57u")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerName" type="Label" parent="." unique_id=1977119881 groups=["player_name"]]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("4_efxa6")
+metadata/_edit_use_anchors_ = true
+
+[node name="TargetSpawner" type="Node2D" parent="." unique_id=441526943 groups=["target_spawner"]]
+script = ExtResource("5_dg77c")
+alien_scene = ExtResource("6_ycdy4")
+
+[node name="GameManager" type="Node" parent="." unique_id=1573111266 groups=["game_manager"]]
+script = ExtResource("7_w48qg")
+
+[node name="Leaderboard" type="Control" parent="." unique_id=1881928821 groups=["leaderboard"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_vivmo")
+metadata/_edit_use_anchors_ = true
