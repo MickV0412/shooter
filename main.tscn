@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c375jqdgj8yqy" path="res://alien_target.tscn" id="6_ycdy4"]
 [ext_resource type="Script" uid="uid://l0nk0yjnucg2" path="res://scripts1/shooter_game_manager.gd" id="7_w48qg"]
 [ext_resource type="Script" uid="uid://ca5vt1fddotew" path="res://scripts1/shooter_leaderboard.gd" id="8_vivmo"]
+[ext_resource type="AudioStream" uid="uid://f1ki0e54jpbk" path="res://Minigame 2.mp3" id="11_efxa6"]
 
 [node name="Main" type="Node2D" unique_id=1402173915]
 
@@ -62,3 +63,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("8_vivmo")
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=325997208]
+stream = ExtResource("11_efxa6")
+autoplay = true
